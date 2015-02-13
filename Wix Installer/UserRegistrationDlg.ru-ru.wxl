@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WixLocalization Culture="ru-ru" Codepage="1251" xmlns="http://schemas.microsoft.com/wix/2006/localization">
+  <String Id="UserRegistrationDlg_Title" Overridable="yes">[ProductName] Установить</String>
+  <String Id="UserRegistrationDlg_UserName" Overridable="yes">&amp;Имя пользователя:</String>
+  <String Id="UserRegistrationDlg_Organization" Overridable="yes">&amp;Организация:</String>
+  <String Id="UserRegistrationDlg_Key" Overridable="yes">CD &amp;ключ:</String>
+  <String Id="UserRegistrationDlgNext" Overridable="yes">&amp;Следующий</String>
+  <String Id="UserRegistrationDlgBack" Overridable="yes">&amp;Назад</String>
+  <String Id="UserRegistrationDlgCancel" Overridable="yes">Отменить</String>
+  <String Id="UserRegistrationDlg_Description" Overridable="yes">Пожалуйста введите свою информацию</String>
+  <String Id="UserRegistrationDlgTitle" Overridable="yes">Информация для клиентов</String>
+</WixLocalization>

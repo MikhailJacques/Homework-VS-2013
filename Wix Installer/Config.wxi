@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Include>
+
+  <?define ProductName = "Homework" ?>
+  <?define ProductDescription = "WiFi signals detector"?>
+  <?define ProductManufacturer = "Analoc"?>
+  <?define ProductAuthor = "Mikhail Jacques" ?>
+  <?define ProductVersion = "1.0" ?>
+  <?define ProductFullVersion = "1.0.0.0" ?>    <!-- Note that 4th version (Revision) is ignored by Windows Installer -->
+  <?define MinimumUpgradeVersion = "0.0.0.0" ?> <!-- Minimum version supported if product is already installed and this is an upgrade -->
+  <?define ProductLanguage = "1033" ?>          <!-- Decimal Language ID (LCID) for the Product. Used for localization. -->
+  <?define PackageLanguage = "1033" ?>          <!-- Decimal Language ID (LCID) for the Package. Used for localization. -->
+  <?define CodePage = "1252" ?>                 <!-- Decimal Language ID (LCID) for the Product. Used for localization. -->
+
+  <!-- 32-bit / 64-bit variables -->
+  <!-- Define platform specific variables for x86 and x64 builds -->
+  <!-- Define product name as you want it to appear in Add/Remove Programs -->
+  <!-- Note that product upgrade code should not change unless you want to install a new product and 
+    have the old product remain installed, that is, both products existing as separate instances. -->
+  <?if $(var.Platform) = x64 ?>
+  <?define Win64 = "yes" ?>
+  <?define ProductDisplayName = "$(var.ProductName) 64-bit" ?>
+  <?define ProductUpgradeCode = "{C5167657-0AC2-407B-96D8-CC70D632BE35}" ?>
+  <?define PlatformProgramFilesFolder = "ProgramFiles64Folder" ?>
+  <?else ?>
+  <?define Win64 = "no" ?>
+  <?define ProductDisplayName = "$(var.ProductName)" ?>
+  <?define ProductUpgradeCode = "{ABE128BD-F9A1-4E76-8281-1766F2924038}" ?>
+  <?define PlatformProgramFilesFolder = "ProgramFilesFolder" ?>
+  <?endif ?>
+
+  <!-- Directory name used as default installation location -->
+  <?define CompanyName = "Analoc" ?>
+  <?define InstallName = "Analoc" ?>
+  <?define ProductAppFolder = "InstallLocation" ?>
+  
+  <?define Title = "Homework Wix Installer" ?>
+  
+  <!-- Registry key name used to store installation location -->
+  <?define InstallNameKey = "Analoc" ?>
+
+  <?define ShortcutDescription = "Launch Homework Application" ?>
+
+  <?define Homework.TargetPath = "..\bin\Release\Homework.exe" ?>
+  <?define Homework.DescriptionPath = "..\docs\Homework Description.pdf" ?>
+
+  <?define VDirName = "Homework" ?>
+  <?define AppPoolName = "HomeworkAppPool" ?>
+  <?define DbName = "Homework" ?>
+
+  <?define WebSiteName = "DefaultWebSite" ?>
+  <?define WebSitePort = "80" ?>
+
+  <?define ManufacturerWebsite = "www.analoc.com" ?>
+
+  <?define DbServer = "(local)" ?>
+  
+</Include>
+
+
+
+
+
+
+
+

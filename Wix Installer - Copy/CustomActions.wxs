@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+
+  <!-- Custom actions need to be mentioned in two places in the source file. -->
+  <!-- http://wixtoolset.org/documentation/manual/v3/xsd/wix/customaction.html -->
+  <!-- http://wixtoolset.org/documentation/manual/v3/wixdev/extensions/authoring_custom_actions.html -->
+
+  <Fragment>
+    <CustomAction 
+      Id="AssignTargetDir" 
+      Property="TARGETDIR" 
+      Value="C:\" 
+      Execute="firstSequence">
+    </CustomAction>
+  </Fragment>
+
+  <!--
+  The CustomAction element includes the action in the installer. 
+  It is given a unique Id, the BinaryKey and DllEntry properties indicate the assembly and entry point for the custom action. 
+  The Impersonate property tells Windows Installer to run the custom action as the installing user. -->
+  <!-- http://wixtoolset.org/documentation/manual/v3/howtos/ui_and_localization/run_program_after_install.html 
+  <Fragment>
+    <CustomAction 
+      Id="LaunchHomework" 
+      BinaryKey="WixCA" 
+      DllEntry="WixShellExec" 
+      Impersonate="yes">
+    </CustomAction>
+  </Fragment> -->
+  
+  <!--  
+  <Fragment>
+    <CustomAction 
+      Id="LaunchReadme" 
+      BinaryKey="WixCA" 
+      DllEntry="WixShellExec" 
+      Impersonate="yes">
+    </CustomAction>
+  </Fragment> 
+  
+  <Fragment>
+    <CustomAction Id="LaunchHomework" Property="WixShellExecHomework" Value="[#fil_homework.exe]" />
+    <CustomAction Id="LaunchReadme" Property="WixShellExecReadme" Value="[fil_readme.txt]" />
+    <CustomAction Id="DoExec" BinaryKey="WixCA" DllEntry="WixShellExec" Impersonate="yes" Return="ignore" />
+  </Fragment>
+  -->
+  
+  <Fragment> 
+
+    <!--
+    <CustomAction
+      Id='LaunchReadMe'
+      Property='NOTEPAD'
+      Execute='commit'
+      ExeCommand='[DocumentsFolder]Readme.txt'
+      Return='asyncNoWait'> 
+    </CustomAction> -->
+
+    <!-- <CustomAction
+      Id='LaunchHomework'
+      FileKey='fil_homework.exe'
+      Execute='commit' 
+      ExeCommand=''
+      Return='asyncNoWait'>
+    </CustomAction> -->
+    <!-- 'commit' - indicates that the custom action will run after successful completion of the installation script (at the end of the installation). -->
+
+    <!--
+    <CustomAction 
+      Id="ViewReadme"
+      Directory="INSTALLDIR"
+      ExeCommand="[SystemFolder]write.exe&quot;[DocumentsFolder]Readme.txt&quot;"
+      Return="asyncNoWait">
+    </CustomAction> -->
+    <!-- 'asyncNoWait' - Indicates that the custom action will run asyncronously and execution may continue after the installer terminates. -->
+
+    <!--
+    <CustomAction
+      Id="LaunchReadMe"
+      BinaryKey="WixCA"
+      DllEntry="WixShellExec"
+      Impersonate="yes">
+    </CustomAction> -->
+
+    <!--
+    <CustomAction 
+      Id="LaunchReadMe"
+      BinaryKey="WixCA"
+      DllEntry="WixShellExec"
+      Impersonate="yes" />  -->
+
+    <!--
+    <CustomAction
+      Id='LaunchFooAction'
+      BinaryKey='FooBinary'
+      DllEntry='FooEntryPoint'
+      Execute='immediate'
+      Return='check'> 
+     </CustomAction> -->
+    <!-- Indicates that the custom action will run synchronously and the return code will be checked for success. This is the default. -->
+
+    <!-- <Binary Id='FooBinary' SourceFile='..\dll\SampleWixExtension.dll'/> -->
+
+  </Fragment>
+  
+</Wix>
